@@ -216,7 +216,6 @@ async function sendNewsletter(newsletter: Newsletter, recipientEmails: string[])
   const snapchatIcon = 'https://nation-sound-festival-project.onrender.com/media/snap.png';
   const linkedinIcon = 'https://nation-sound-festival-project.onrender.com/media/linkedin.png';
   const youtubeIcon = 'https://nation-sound-festival-project.onrender.com/media/youtube.png';
-  const unsubscribeBaseURL = 'https://nation-sound-festival-project.onrender.com/unsubscribe?email='; // URL de désabonnement
 
   let emailContent = `
     <div style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;">
@@ -231,7 +230,7 @@ async function sendNewsletter(newsletter: Newsletter, recipientEmails: string[])
     const imageUrl = `https://nation-sound-festival-project.onrender.com${article.image.url}`;
     emailContent += `
       <div style="display: flex; align-items: center; margin-bottom: 20px;">
-        <img src="${imageUrl}" alt="${article.image.alt}" style="max-width: 150px; margin-right: 20px;">
+        <img src="${imageUrl}" alt="${article.image.alt}" style="max-width: 250px; margin-right: 20px;">
         <div>
           <h2 style="color: #333333;">${article.title}</h2>
           <p style="color: #555555;">${article.content[0].children[0].text}</p>
@@ -263,14 +262,11 @@ async function sendNewsletter(newsletter: Newsletter, recipientEmails: string[])
           <img src="${linkedinIcon}" alt="LinkedIn" style="width: 30px; margin: 0 10px;">
         </a>
       </div>
-      <div style="padding: 20px; text-align: center; color: #555555;">
-        <p>Si vous ne souhaitez plus recevoir cette newsletter, vous pouvez <a href="${unsubscribeBaseURL}[email]" style="color: #007bff; text-decoration: underline;">vous désabonner ici</a>.</p>
-      </div>
     </div>
   `;
 
   const msg = {
-    to: recipientEmails.map(email => ({ email, unsubscribeLink: `${unsubscribeBaseURL}${email}` })),
+    to: recipientEmails,
     from: 'c.ledallhazebrouck@ecoles-epsi.net',
     subject: newsletter.title,
     html: emailContent,
@@ -288,29 +284,6 @@ async function sendNewsletter(newsletter: Newsletter, recipientEmails: string[])
     console.error("Erreur lors de l'envoi de la newsletter:", error);
   }
 }
-// ==========================
-// Unsubscribe Newsletter
-// ==========================
-
-app.get('/unsubscribe', async (req: Request, res: Response) => {
-  const { email } = req.query;
-
-  if (!email) {
-    return res.status(400).json({ message: 'Email requis pour se désabonner' });
-  }
-
-  try {
-    await payload.delete({
-      collection: 'subscribers-newsletters',
-      where: { email: { equals: email } },
-    });
-
-    res.send('Vous avez été désabonné avec succès.');
-  } catch (error) {
-    console.error('Erreur lors du désabonnement:', error);
-    res.status(500).send('Erreur lors du désabonnement.');
-  }
-});
 
 // ==========================
 // Full Process for Sending the Newsletter
