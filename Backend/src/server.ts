@@ -23,10 +23,10 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY || '');
 
 // Configures CORS to allow requests from Vercel domain
 const corsOptions = {
-  origin: 'https://nation-sound-festival-project-fr2p.vercel.app',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,
-  allowedHeaders: 'Content-Type, Authorization',
+  origin: 'https://nation-sound-festival-project-fr2p.vercel.app', // Remplacez par l’URL de votre frontend
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Méthodes HTTP autorisées
+  allowedHeaders: ['Content-Type', 'Authorization'], // En-têtes autorisés
+  credentials: true, // Autorise l'envoi des cookies et identifiants
 };
 
 app.use(cors(corsOptions));
