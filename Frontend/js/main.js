@@ -50,37 +50,37 @@ const artists = [
     {
         name: 'Neon Pulse',
         description: 'Ce duo électrisant fusionne des beats envoûtants et des mélodies synthétiques pour offrir un cocktail musical puissant et réconfortant où la pop et le brass band se rencontrent ! [...]',
-        image: 'https://nation-sound-festival.onrender.com/media/mike-cox-MEAXhjcnHEE-unsplash-side1.jpg',
+        image: 'https://nation-sound-festival-project.onrender.com/media/mike-cox-MEAXhjcnHEE-unsplash-side1.jpg',
         url: '/concerts/artist_neon_pulse.html'
     },
     {
         name: 'Electric Echoes',
         description: 'Mud Deep, co-fondatrice de D.KO Records et génie de la musique électronique, s\'apprête à enflammer la scène. Préparez-vous pour un set aux petits oignons avec cette maestro créative ! [...]',
-        image: 'https://nation-sound-festival.onrender.com/media/vidar-nordli-mathisen-CTlRgg7Gfmw-unsplash-slide2.jpg',
+        image: 'https://nation-sound-festival-project.onrender.com/media/vidar-nordli-mathisen-CTlRgg7Gfmw-unsplash-slide2.jpg',
         url: '/concerts/artist_electric_echoes.html'
     },
     {
         name: 'Luminous Beats',
         description: 'Orion est connu pour ses collaborations avec les plus grands noms de l\'électro et ses remix audacieux. Il ne cesse de repousser les limites de la créativité musicale avec ses tubes flamboyants. [...]',
-        image: 'https://nation-sound-festival.onrender.com/media/vidar-nordli-mathisen-IT5-0oM0YH0-unsplash-slide3.jpg',
+        image: 'https://nation-sound-festival-project.onrender.com/media/vidar-nordli-mathisen-IT5-0oM0YH0-unsplash-slide3.jpg',
         url: '/concerts/artist_luminous_beats.html'
     },
     {
         name: 'Galactic Groove',
         description: 'Galactic Groove est un groupe révolutionnaire qui marie des rythmes électroniques hypnotiques à des mélodies entraînantes. Leur musique est un voyage sonore unique qui transporte l\'auditeur [...]',
-        image: 'https://nation-sound-festival.onrender.com/media/vidar-nordli-mathisen-szmET3Kja8s-unsplash-slide5.jpg',
+        image: 'https://nation-sound-festival-project.onrender.com/media/vidar-nordli-mathisen-szmET3Kja8s-unsplash-slide5.jpg',
         url: '/concerts/artist_galactic_groove.html'
     },
     {
         name: 'Synthwave Surge',
         description: 'Synthwave Surge, avec sa voix envoûtante et ses mélodies soul fusionnées à des rythmes électroniques, offre une performance riche en émotions. Son style unique capte l\'attention et fait vibrer [...]',
-        image: 'https://nation-sound-festival.onrender.com/media/2150639041.jpg',
+        image: 'https://nation-sound-festival-project.onrender.com/media/2150639041.jpg',
         url: '/concerts/artist_synthwave_surge.html'
     },
     {
         name: 'PULSE ECHO',
         description: 'Pulse Echo est connue pour ses performances dynamiques et ses rythmes contagieux qui font danser les foules. Sa musique est une fusion innovante de genres qui crée une atmosphère festive [...]',
-        image: 'https://nation-sound-festival.onrender.com/media/2148325414.jpg',
+        image: 'https://nation-sound-festival-project.onrender.com/media/2148325414.jpg',
         url: '/concerts/artist_pulse_echo.html'
     },
 ];
@@ -150,11 +150,12 @@ function submitNewsletter() {
     // Send POST request to the API for newsletter subscription
     // This line sends a POST request to the provided URL with the user's email as the data payload. 
     // This request is intended to add the user’s email to the newsletter subscription list.
-    axios.post('https://nation-sound-festival.onrender.com/api/newsletter', { email: email })
+    axios.post('https://nation-sound-festival-project.onrender.com/api/newsletter', { email: email })
         // If the request is successful, this .then block is executed and an alert is displayed to the user saying "Subscription successful".  
         .then(response => {
             console.log(response.data.message);
             alert('Inscription réussie');
+            emailField.value = ''; // Clear the field
         })
         //  If there is an error during the request, this .catch block is executed.
         .catch(error => {
@@ -180,7 +181,7 @@ function validateEmail(email) {
 // ==========================
 
 /// Retrieve breaking news from the Payload API with pagination
-const baseURL = 'https://nation-sound-festival.onrender.com/api/breaking-news';
+const baseURL = 'https://nation-sound-festival-project.onrender.com/api/breaking-news';
 let currentPage = 1;
 const newsPerPage = 1;
 
@@ -282,7 +283,7 @@ new Vue({
         // The fetchArtists method retrieves data from an API using axios and stores the data in the "artists" array.
         // This method also initializes filters and sorts the concerts by ascending date.
         fetchArtists() {
-            axios.get('https://nation-sound-festival.onrender.com/api/concerts?limit=15')
+            axios.get('https://nation-sound-festival-project.onrender.com/api/concerts?limit=15')
                 .then(response => {
                     console.log("Données reçues :", response.data.docs);
                     this.artists = response.data.docs;
@@ -344,26 +345,26 @@ new Vue({
             // This function checks if the image object exists, and if it has a sizes property with a card size defined.
             // If so, it constructs the URL based on the card size (image.sizes.card.url).
             if (image && image.sizes && image.sizes.card) {
-                return `https://nation-sound-festival.onrender.com${image.sizes.card.url}`;
+                return `https://nation-sound-festival-project.onrender.com${image.sizes.card.url}`;
                 // If no card size is found but the image object contains a general url, it falls back to this URL.
             } else if (image && image.url) {
-                return `https://nation-sound-festival.onrender.com${image.url}`;
+                return `https://nation-sound-festival-project.onrender.com${image.url}`;
             }
             // If the image is undefined or neither sizes.card nor url is present, it returns a default image URL.
-            return 'https://nation-sound-festival.onrender.com/media/mike-cox-MEAXhjcnHEE-unsplash-side1-2.jpg';
+            return 'https://nation-sound-festival-project.onrender.com/media/mike-cox-MEAXhjcnHEE-unsplash-side1-2.jpg';
         },
 
         // Retrieve concert URL with slug or name.
         // This function ensures that each artist has a unique and consistent URL based on their name or slug, making it easy to link to specific concert pages.
         getConcertUrl(artist) {
             const artistSlug = artist.slug.replace('.html', '');
-            return `https://nation-sound-festival.onrender.com/concerts/${artist.slug}.html`;
+            return `https://nation-sound-festival-project.onrender.com/concerts/${artist.slug}.html`;
         },
 
         // Fetch locations and points of interest
         fetchLocations() {
             // Sending a GET request to the Payload API to retrieve points of interest, limited to 30 items.
-            axios.get('https://nation-sound-festival.onrender.com/api/points-d-interet?limit=30')
+            axios.get('https://nation-sound-festival-project.onrender.com/api/points-d-interet?limit=30')
                 .then(response => {
                     // Extracting the data (points of interest) from the API response.
                     const locations = response.data.docs;
