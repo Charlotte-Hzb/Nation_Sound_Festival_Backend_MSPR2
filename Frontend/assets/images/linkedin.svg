@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100.00001mm"
+   height="100.00001mm"
+   viewBox="0 0 100.00001 100.00001"
+   version="1.1"
+   id="svg1"
+   inkscape:export-filename="instagram.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm" />
+  <defs
+     id="defs1" />
+  <g
+     id="XMLID_2094_"
+     transform="matrix(2.5278059,0,0,2.5278059,-796.51669,-459.2543)">
+	<path
+   id="XMLID_2101_"
+   style="fill:none;stroke:#ffffff;stroke-width:1.5;stroke-miterlimit:10;stroke-opacity:1"
+   d="m 334.882,220.491 v 0 c -10.51,0 -19.03,-8.52 -19.03,-19.03 v 0 c 0,-10.51 8.52,-19.03 19.03,-19.03 v 0 c 10.51,0 19.03,8.52 19.03,19.03 v 0 c 0,10.51 -8.52,19.03 -19.03,19.03 z" />
+
+	<g
+   id="XMLID_2095_">
+		<g
+   id="XMLID_2097_">
+			<rect
+   id="XMLID_2100_"
+   x="326.25201"
+   y="197.21899"
+   style="fill:#ffffff;fill-opacity:1"
+   width="3.9389999"
+   height="12.724" />
+
+			<path
+   id="XMLID_2098_"
+   style="fill:#ffffff;fill-opacity:1"
+   d="m 328.203,195.553 c 1.286,0 2.329,-1.052 2.329,-2.348 0,-1.296 -1.042,-2.348 -2.329,-2.348 -1.287,0 -2.329,1.051 -2.329,2.348 0,1.297 1.042,2.348 2.329,2.348 z" />
+
+		</g>
+
+		<path
+   id="XMLID_2096_"
+   style="fill:#ffffff;fill-opacity:1"
+   d="m 336.487,203.263 c 0,-1.789 0.823,-2.854 2.4,-2.854 1.448,0 2.144,1.023 2.144,2.854 0,1.833 0,6.679 0,6.679 h 3.92 c 0,0 0,-4.648 0,-8.056 0,-3.408 -1.932,-5.056 -4.629,-5.056 -2.699,0 -3.834,2.102 -3.834,2.102 v -1.714 h -3.778 v 12.724 h 3.778 c -10e-4,0 -10e-4,-4.719 -10e-4,-6.679 z" />
+
+	</g>
+
+</g>
+</svg>
