@@ -26,8 +26,8 @@ app.use(
   cors({
     origin: [
       'http://localhost:8080',
-      'https://nation-sound-festival.vercel.app',
-      'https://nation-sound-festival.onrender.com',
+      'https://nation-sound-festival-project-fr2p.vercel.app/',
+      'https://nation-sound-festival-project.onrender.com',
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
@@ -89,8 +89,10 @@ app.get('/', (_, res) => {
 // ==========================
 // Fetching and Storing Emails
 // ==========================
+
 app.post('/api/newsletter', async (req: Request, res: Response) => {
   const { email } = req.body;
+  console.log("Email reçu pour inscription:", email);  // Ajoutez cette ligne pour voir si l'email est bien reçu
 
   if (!email) {
     return res.status(400).json({ message: 'Email requis' });
@@ -98,7 +100,7 @@ app.post('/api/newsletter', async (req: Request, res: Response) => {
 
   try {
     const subscriberExists = await payload.find({
-      collection: 'subscribers_newsletter',
+      collection: 'subscribers-newsletters',
       where: { email: { equals: email } },
     });
 
@@ -107,9 +109,10 @@ app.post('/api/newsletter', async (req: Request, res: Response) => {
     }
 
     await payload.create({
-      collection: 'subscribers_newsletter',
+      collection: 'subscribers-newsletters',
       data: { email },
     });
+    console.log(`Email enregistré dans MongoDB: ${email}`);
 
     return res.status(200).json({ message: 'Inscription réussie' });
   } catch (err) {
@@ -123,23 +126,24 @@ app.post('/api/newsletter', async (req: Request, res: Response) => {
 // ==========================
 // Connexion à MongoDB
 const client = new MongoClient(process.env.MONGODB_URI || '');
-const dbName = 'festival_db';
-const collectionName = 'subscribers_newsletter';
+const dbName = 'test';
+const collectionName = 'subscribers-newsletters';
 
 async function getSubscribersEmails(): Promise<string[]> {
   try {
     await client.connect();
-    const db = client.db(dbName);
-    const collection = db.collection(collectionName);
+    const db = client.db('test');
+    const collection = db.collection('subscribers-newsletters');
 
-    // Récupère tous les emails dans la collection `subscribers_newsletter`
     const subscribers = await collection.find().toArray();
-
-    // Extrait les emails des abonnés et retourne un tableau d'emails
-    return subscribers.map((subscriber) => {
-      const { email } = subscriber as unknown as { email: string }; // Conversion explicite
+    const emailList = subscribers.map((subscriber) => {
+      const { email } = subscriber as unknown as { email: string };
       return email;
     });
+
+    console.log("Emails récupérés:", emailList);  // Vérifiez les emails récupérés
+
+    return emailList;
   } catch (error) {
     console.error('Erreur lors de la récupération des emails des abonnés:', error);
     throw new Error('Erreur lors de la récupération des abonnés');
@@ -205,25 +209,26 @@ async function sendNewsletter(newsletter: Newsletter, recipientEmails: string[])
     return;
   }
 
-  const logoURL = 'https://nation-sound-festival.onrender.com/media/logoNS.png';
-  const facebookIcon = 'https://nation-sound-festival.onrender.com/media/facebook.svg';
-  const twitterIcon = 'https://nation-sound-festival.onrender.com/media/twitter.svg';
-  const instagramIcon = 'https://nation-sound-festival.onrender.com/media/instagram.svg';
-  const snapchatIcon = 'https://nation-sound-festival.onrender.com/media/snap.svg';
-  const linkedinIcon = 'https://nation-sound-festival.onrender.com/media/linkedin.svg';
-  const youtubeIcon = 'https://nation-sound-festival.onrender.com/media/ytb.svg';
+  const logoURL = 'https://nation-sound-festival-project.onrender.com/media/logoNS.png';
+  const facebookIcon = 'https://nation-sound-festival-project.onrender.com/media/facebook.png';
+  const twitterIcon = 'https://nation-sound-festival-project.onrender.com/media/twitter.png';
+  const instagramIcon = 'https://nation-sound-festival-project.onrender.com/media/instagram.png';
+  const snapchatIcon = 'https://nation-sound-festival-project.onrender.com/media/snap.png';
+  const linkedinIcon = 'https://nation-sound-festival-project.onrender.com/media/linkedin.png';
+  const youtubeIcon = 'https://nation-sound-festival-project.onrender.com/media/youtube.png';
+  const unsubscribeBaseURL = 'https://nation-sound-festival-project.onrender.com/unsubscribe?email='; // URL de désabonnement
 
   let emailContent = `
     <div style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;">
       <div style="background-color: #000000; padding: 20px; text-align: center;">
-        <img src="${logoURL}" alt="Festival NationSound Logo" style="max-width: 150px;">
+        <img src="${logoURL}" alt="Festival NationSound Logo" style="width: 100%; max-width: 200px; height: auto; margin-bottom: 10px;">
       </div>
       <div style="padding: 20px; background-color: #ffffff;">
         <h1 style="color: #333333;">${newsletter.title}</h1>
   `;
 
   newsletter.articles.forEach((article: Article) => {
-    const imageUrl = `https://nation-sound-festival.onrender.com${article.image.url}`;
+    const imageUrl = `https://nation-sound-festival-project.onrender.com${article.image.url}`;
     emailContent += `
       <div style="display: flex; align-items: center; margin-bottom: 20px;">
         <img src="${imageUrl}" alt="${article.image.alt}" style="max-width: 150px; margin-right: 20px;">
@@ -258,23 +263,54 @@ async function sendNewsletter(newsletter: Newsletter, recipientEmails: string[])
           <img src="${linkedinIcon}" alt="LinkedIn" style="width: 30px; margin: 0 10px;">
         </a>
       </div>
+      <div style="padding: 20px; text-align: center; color: #555555;">
+        <p>Si vous ne souhaitez plus recevoir cette newsletter, vous pouvez <a href="${unsubscribeBaseURL}[email]" style="color: #007bff; text-decoration: underline;">vous désabonner ici</a>.</p>
+      </div>
     </div>
   `;
 
   const msg = {
-    to: recipientEmails,
+    to: recipientEmails.map(email => ({ email, unsubscribeLink: `${unsubscribeBaseURL}${email}` })),
     from: 'c.ledallhazebrouck@ecoles-epsi.net',
     subject: newsletter.title,
     html: emailContent,
   };
 
+  console.log("Préparation de l'envoi de l'email avec les détails suivants :");
+  console.log("Destinataires :", recipientEmails);
+  console.log("Sujet :", newsletter.title);
+
   try {
+    console.log("Envoi de la newsletter à :", recipientEmails);  // Log pour voir les emails
     await sgMail.sendMultiple(msg);
     console.log('Newsletter envoyée avec succès');
   } catch (error) {
     console.error("Erreur lors de l'envoi de la newsletter:", error);
   }
 }
+// ==========================
+// Unsubscribe Newsletter
+// ==========================
+
+app.get('/unsubscribe', async (req: Request, res: Response) => {
+  const { email } = req.query;
+
+  if (!email) {
+    return res.status(400).json({ message: 'Email requis pour se désabonner' });
+  }
+
+  try {
+    await payload.delete({
+      collection: 'subscribers-newsletters',
+      where: { email: { equals: email } },
+    });
+
+    res.send('Vous avez été désabonné avec succès.');
+  } catch (error) {
+    console.error('Erreur lors du désabonnement:', error);
+    res.status(500).send('Erreur lors du désabonnement.');
+  }
+});
 
 // ==========================
 // Full Process for Sending the Newsletter
@@ -283,6 +319,12 @@ async function processAndSendNewsletter() {
   try {
     const newsletter = await getLatestNewsletter();
     const recipientEmails = await getSubscribersEmails();
+    console.log("Emails destinataires pour envoi:", recipientEmails); // Ajouter ce log
+
+    if (recipientEmails.length === 0) {
+      console.log("Aucun email d'abonnés pour envoyer la newsletter.");
+      return;
+    }
     await sendNewsletter(newsletter, recipientEmails);
   } catch (error) {
     console.error("Erreur lors de l'envoi de la newsletter:", error);
