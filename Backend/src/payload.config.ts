@@ -11,8 +11,9 @@ import { buildConfig } from 'payload/config';
 import Users from './collections/Users';
 import Concerts from './collections/Concerts';
 import BreakingNews from './collections/breakingNews';
-import newsletterContent from './collections/newsletterContent';
 import { CollectionConfig } from 'payload/types';
+import ContentNewsletter from './collections/contentNewsletter';
+import subscribersNewsletter from './collections/subscribersNewsletter';
 
 // Configuring the PointsDInteret collection to manage location
 const PointsDInteret: CollectionConfig = {
@@ -96,7 +97,7 @@ export default buildConfig({
     bundler: webpackBundler(),
   },
   editor: slateEditor({}),
-  collections: [Users, Concerts, PointsDInteret, BreakingNews, newsletterContent, Media],
+  collections: [Users, Concerts, PointsDInteret, BreakingNews, ContentNewsletter, subscribersNewsletter, Media],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
