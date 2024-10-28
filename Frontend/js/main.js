@@ -51,37 +51,37 @@ const artists = [
         name: 'Neon Pulse',
         description: 'Ce duo électrisant fusionne des beats envoûtants et des mélodies synthétiques pour offrir un cocktail musical puissant et réconfortant où la pop et le brass band se rencontrent ! [...]',
         image: 'https://nation-sound-festival-project.onrender.com/media/mike-cox-MEAXhjcnHEE-unsplash-side1.jpg',
-        url: '/concerts/artist_neon_pulse.html'
+        url: 'https://nation-sound-festival-project.onrender.com/concerts/artist_neon_pulse.html'
     },
     {
         name: 'Electric Echoes',
         description: 'Mud Deep, co-fondatrice de D.KO Records et génie de la musique électronique, s\'apprête à enflammer la scène. Préparez-vous pour un set aux petits oignons avec cette maestro créative ! [...]',
         image: 'https://nation-sound-festival-project.onrender.com/media/vidar-nordli-mathisen-CTlRgg7Gfmw-unsplash-slide2.jpg',
-        url: '/concerts/artist_electric_echoes.html'
+        url: 'https://nation-sound-festival-project.onrender.com/concerts/artist_electric_echoes.html'
     },
     {
         name: 'Luminous Beats',
         description: 'Orion est connu pour ses collaborations avec les plus grands noms de l\'électro et ses remix audacieux. Il ne cesse de repousser les limites de la créativité musicale avec ses tubes flamboyants. [...]',
         image: 'https://nation-sound-festival-project.onrender.com/media/vidar-nordli-mathisen-IT5-0oM0YH0-unsplash-slide3.jpg',
-        url: '/concerts/artist_luminous_beats.html'
+        url: 'https://nation-sound-festival-project.onrender.com/concerts/artist_luminous_beats.html'
     },
     {
         name: 'Galactic Groove',
         description: 'Galactic Groove est un groupe révolutionnaire qui marie des rythmes électroniques hypnotiques à des mélodies entraînantes. Leur musique est un voyage sonore unique qui transporte l\'auditeur [...]',
         image: 'https://nation-sound-festival-project.onrender.com/media/vidar-nordli-mathisen-szmET3Kja8s-unsplash-slide5.jpg',
-        url: '/concerts/artist_galactic_groove.html'
+        url: 'https://nation-sound-festival-project.onrender.com/concerts/artist_galactic_groove.html'
     },
     {
         name: 'Synthwave Surge',
         description: 'Synthwave Surge, avec sa voix envoûtante et ses mélodies soul fusionnées à des rythmes électroniques, offre une performance riche en émotions. Son style unique capte l\'attention et fait vibrer [...]',
         image: 'https://nation-sound-festival-project.onrender.com/media/2150639041.jpg',
-        url: '/concerts/artist_synthwave_surge.html'
+        url: 'https://nation-sound-festival-project.onrender.com/concerts/artist_synthwave_surge.html'
     },
     {
         name: 'PULSE ECHO',
         description: 'Pulse Echo est connue pour ses performances dynamiques et ses rythmes contagieux qui font danser les foules. Sa musique est une fusion innovante de genres qui crée une atmosphère festive [...]',
         image: 'https://nation-sound-festival-project.onrender.com/media/2148325414.jpg',
-        url: '/concerts/artist_pulse_echo.html'
+        url: 'https://nation-sound-festival-project.onrender.com/concerts/artist_pulse_echo.html'
     },
 ];
 
