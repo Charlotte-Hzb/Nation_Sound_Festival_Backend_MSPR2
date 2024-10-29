@@ -270,32 +270,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // ==========================
-// Cookies banner
-// ==========================
-
-// Wait until the DOM is fully loaded before executing the function
-document.addEventListener('DOMContentLoaded', function () {
-    // Select the cookie banner element
-    const cookieBanner = document.getElementById('cookie-banner');
-    // Select the "Accept Cookies" button
-    const acceptCookiesBtn = document.getElementById('accept-cookies');
-
-    // Check if the user has already accepted cookies by looking for a value in localStorage
-    if (!localStorage.getItem('cookiesAccepted')) {
-        // If cookies haven't been accepted, display the cookie banner
-        cookieBanner.style.display = 'block';
-    }
-
-    // Add an event listener to the "Accept Cookies" button
-    acceptCookiesBtn.addEventListener('click', function () {
-        // Set a flag in localStorage to indicate that cookies have been accepted
-        localStorage.setItem('cookiesAccepted', 'true');
-        // Hide the cookie banner after accepting
-        cookieBanner.style.display = 'none';
-    });
-});
-
-// ==========================
 // Vue.js Integration for Artists and Map
 // ==========================
 
