@@ -2,12 +2,13 @@ import { CollectionConfig } from 'payload/types';
 
 const subscribersNewsletter: CollectionConfig = {
   slug: 'subscribers-newsletters',
+  // The collection name in the CMS
   labels: {
     singular: 'Subscriber Newsletter',
     plural: 'Subscribers Newsletter',
   },
   access: {
-    read: () => true, // Permet la lecture publique (à ajuster si besoin)
+    read: () => true, // Allows everyone to read the concerts
   },
   fields: [
     {
