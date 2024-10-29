@@ -54,7 +54,7 @@ const PointsDInteret: CollectionConfig = {
 const Media: CollectionConfig = {
   slug: 'media',
   access: {
-    read: () => true, //Allows public read access
+    read: () => true, // Allows everyone to read the concerts
   },
   upload: {
     // Defines the URL path where media files will be publicly accessible
