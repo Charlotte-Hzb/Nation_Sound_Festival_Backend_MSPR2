@@ -89,18 +89,19 @@ Configure the backend on Render and the frontend on Vercel. Ensure that environm
 ## Project Architecture
 
 The backend architecture is as follows :
-
+```
 Backend/
-  |-- src/
-    |-- collections/           # Payload CMS Collections (Concerts, BreakingNews, etc.)
-    |-- views/
-      |-- artist_template.ejs # EJS template for artist pages
-    |-- payload.config.ts       # Payload CMS configuration
-    |-- server.ts               # Express server with endpoints
-  |-- media/                      # Folder for media assets
-  |-- package.json                # Project dependencies
-  |-- tsconfig.json               # TypeScript configuration
-  |-- README.md                   # Project documentation
+  ├── src/
+  │   ├── collections/           # Payload CMS Collections (Concerts, BreakingNews, etc.)
+  │   ├── views/
+  │   │   └── artist_template.ejs # EJS template for artist pages
+  │   ├── payload.config.ts       # Payload CMS configuration
+  │   └── server.ts               # Express server with endpoints
+  ├── media/                      # Folder for media assets
+  ├── package.json                # Project dependencies
+  ├── tsconfig.json               # TypeScript configuration
+  └── README.md                   # Project documentation
+```
 
 The **payload.config.ts** file configures collections, plugins, and Payload CMS settings, while **server.ts** manages routes and API interactions.
 
