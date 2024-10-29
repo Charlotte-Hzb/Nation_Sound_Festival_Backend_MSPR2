@@ -1,44 +1,34 @@
-// Imports the CollectionConfig type from the Payload CMS. 
-// This type is used to define the structure and configuration of a collection within the Payload CMS.
 import { CollectionConfig } from 'payload/types';
 
-const PointsDInteret: CollectionConfig = {
-  slug: 'points-d-interet',
+const subscribersNewsletter: CollectionConfig = {
+  slug: 'subscribers-newsletters',
   // The collection name in the CMS
   labels: {
-    singular: 'Point of Interest', 
-    plural: 'Points of Interest',    
-    },
+    singular: 'Subscriber Newsletter',
+    plural: 'Subscribers Newsletter',
+  },
+  access: {
+    read: () => true, // Allows everyone to read the concerts
+  },
   fields: [
-    // The fields that define the content structure of the collection
     {
-      name: 'name',
-      type: 'text',
+      name: 'email',
+      type: 'email',
       required: true,
+      unique: true,
+      label: 'Email',
     },
     {
-      name: 'lat',
-      type: 'number',
-      required: true,
-    },
-    {
-      name: 'lng',
-      type: 'number',
-      required: true,
-    },
-    {
-      name: 'type',
-      type: 'select',
-      options: [
-        { label: 'Accueil', value: 'Accueil' },
-        { label: 'WC', value: 'WC' },
-        { label: 'Scène', value: 'Scène' },
-        { label: 'Buvette', value: 'Buvette' },
-        { label: 'Shop', value: 'Shop' },
-      ],
-      required: true,
+      name: 'createdAt',
+      type: 'date',
+      label: 'Date d\'inscription',
+      admin: {
+        readOnly: true,
+        position: 'sidebar',
+      },
+      defaultValue: () => new Date().toISOString(),
     },
   ],
 };
 
-export default PointsDInteret;
+export default subscribersNewsletter;
