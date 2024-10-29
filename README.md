@@ -9,7 +9,6 @@ This project involves the development of a mobile-responsive web platform for th
 + [About the Project](#about-the-project)
 + [Features](#features)
 + [Technology Stack](#technology-stack)
-+ [Installation](#installation)
 + [Usage](#usage)
 
 ## About the Project
@@ -53,22 +52,6 @@ The web platform is designed to:
 + **Backend Language**: Node.js.
 + **Database**: SQL (MySQL) or NoSQL (MongoDB) database for storing festival schedules, user credentials, etc.
 + **API**: RESTful API to serve data like event schedules and artist meet-and-greet times.
-
-## Installation
-
-To set up the project locally:
-
-1. Clone the repository:
-
-   `git clone https://github.com/Charlotte-Hzb/Nation-Sound-Festival.git`
-   
-2. Install dependencies:
-
-  `npm install`
-  
-3. Start the development server:
-   
-   `npm start`
 
 ## Usage
 
