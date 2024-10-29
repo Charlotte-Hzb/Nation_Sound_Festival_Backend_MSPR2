@@ -58,7 +58,7 @@ The festival's API provides the concert schedule, timings, and locations. Static
 
 ## Installation
 
-### Prérequis
+### Prerequisites
 
 + Node.js (version 14+)
 + Git (for source code management)
