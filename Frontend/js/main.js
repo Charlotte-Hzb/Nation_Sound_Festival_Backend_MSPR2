@@ -85,27 +85,34 @@ const artists = [
     },
 ];
 
-// Fonction de mélange des artistes
+// Artist shuffle function to randomize the order of artists in the array
 function shuffle(array) {
+    // Loop through the array backwards
     for (let i = array.length - 1; i > 0; i--) {
+        // Select a random index from 0 to i
         const j = Math.floor(Math.random() * (i + 1));
+        // Swap elements at indices i and j
         [array[i], array[j]] = [array[j], array[i]];
     }
+    // Return the shuffled array
     return array;
 }
 
-// Sélection de 3 artistes aléatoires
+// Select 3 random artists from the shuffled array
 const randomArtists = shuffle(artists).slice(0, 3);
 
-// Fonction d'affichage des artistes aléatoires
+// Display function for random artists
 function displayRandomArtists() {
+    // Locate the container element for featured artists
     const container = document.getElementById('featured-artists');
     if (!container) {
+        // Log error if container element is not found
         console.error('Element #featured-artists not found');
         return;
     }
-
+    // Iterate over each random artist and generate HTML for their card
     randomArtists.forEach(artist => {
+        // Define the HTML structure for the artist's card, using template literals
         const cardHtml = `
             <div class="col-12 col-md-4 mb-3">
               <div class="card">
@@ -120,11 +127,12 @@ function displayRandomArtists() {
               </div>
             </div>
         `;
+        // Append the artist's card HTML to the container
         container.innerHTML += cardHtml;
     });
 }
 
-// Lancer l'affichage après le chargement de la page
+// Trigger display after the page has fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     displayRandomArtists();
 });
