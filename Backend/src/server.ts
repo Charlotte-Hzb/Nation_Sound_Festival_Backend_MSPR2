@@ -346,15 +346,15 @@ app.get('/concerts/:slug.html', async (req: Request, res: Response) => {
 // ==========================
 
 // Endpoint to fetch points of interest
-app.get('/api/points-d-interet', async (req: Request, res: Response) => {
+app.get('/api/points-of-interest', async (req: Request, res: Response) => {
   const limit = parseInt(req.query.limit as string, 10) || 30;
   try {
-    const pointsDInteret = await payload.find({
-      collection: 'points-d-interet',
+    const pointOfInterest = await payload.find({
+      collection: 'points-of-interest',
       limit: limit,
       depth: 1,
     });
-    res.json(pointsDInteret);
+    res.json(pointOfInterest);
   } catch (error) {
     console.error("Erreur lors de la récupération des points d'intérêt:", error);
     res.status(500).json({ message: "Erreur lors de la récupération des points d'intérêt" });
