@@ -224,39 +224,6 @@
       </div>  
     </footer>
   </div>
-  <!-- Cookies banner  -->
-  <div id="cookie-banner" style="position: fixed; bottom: 0; width: 100%; background-color: #000; color: #fff; padding: 15px; text-align: center; z-index: 1000; display: block;">
-    <p>
-      Ce site utilise des cookies pour améliorer votre expérience de navigation. En continuant à naviguer, vous acceptez notre utilisation des cookies.
-      <a href="./data-cookie.html" style="color: #f5c842;">Learn more</a>
-    </p>
-    <button id="accept-cookies" style="background-color: #f5c842; color: #000; border: none; padding: 8px 16px; cursor: pointer;">Accept</button>
-  </div> 
-  <script>
-// Cookies banner
-
-// Wait until the DOM is fully loaded before executing the function
-document.addEventListener('DOMContentLoaded', function () {
-    // Select the cookie banner element
-    const cookieBanner = document.getElementById('cookie-banner');
-    // Select the "Accept Cookies" button
-    const acceptCookiesBtn = document.getElementById('accept-cookies');
-
-    // Check if the user has already accepted cookies by looking for a value in localStorage
-    if (!localStorage.getItem('cookiesAccepted')) {
-        // If cookies haven't been accepted, display the cookie banner
-        cookieBanner.style.display = 'block';
-    }
-
-    // Add an event listener to the "Accept Cookies" button
-    acceptCookiesBtn.addEventListener('click', function () {
-        // Set a flag in localStorage to indicate that cookies have been accepted
-        localStorage.setItem('cookiesAccepted', 'true');
-        // Hide the cookie banner after accepting
-        cookieBanner.style.display = 'none';
-    });
-});
-  </script> 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
