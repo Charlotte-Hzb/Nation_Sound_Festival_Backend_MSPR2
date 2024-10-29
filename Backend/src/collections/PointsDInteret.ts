@@ -3,8 +3,12 @@
 import { CollectionConfig } from 'payload/types';
 
 const PointsDInteret: CollectionConfig = {
-  // The collection name in the CMS
   slug: 'points-d-interet',
+  // The collection name in the CMS
+  labels: {
+    singular: 'Point of Interest', 
+    plural: 'Points of Interest',    
+    },
   fields: [
     // The fields that define the content structure of the collection
     {
