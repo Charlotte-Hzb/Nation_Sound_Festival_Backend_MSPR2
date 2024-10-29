@@ -153,5 +153,10 @@ The **payload.config.ts** file configures collections, plugins, and Payload CMS 
   
 ## Production Launch
 
-`npm run build` # Compiles TypeScript code
-`npm run serve` # Starts the application in production mode
+Compiles TypeScript code :
+
+`npm run build` 
+
+Starts the application in production mode :
+
+`npm run serve` 
