@@ -92,11 +92,11 @@ The backend architecture is as follows :
 
 Backend/
 ├── src/
-│   ├── collections/           # Payload CMS Collections (Concerts, BreakingNews, etc.)
-│   ├── views/
-│   │   └── artist_template.ejs # EJS template for artist pages
-│   ├── payload.config.ts       # Payload CMS configuration
-│   └── server.ts               # Express server with endpoints
+  ├── collections/           # Payload CMS Collections (Concerts, BreakingNews, etc.)
+  ├── views/
+  │   └── artist_template.ejs # EJS template for artist pages
+  ├── payload.config.ts       # Payload CMS configuration
+  └── server.ts               # Express server with endpoints
 ├── media/                      # Folder for media assets
 ├── package.json                # Project dependencies
 ├── tsconfig.json               # TypeScript configuration
