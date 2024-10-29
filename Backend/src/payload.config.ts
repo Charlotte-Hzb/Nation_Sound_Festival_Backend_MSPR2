@@ -14,8 +14,9 @@ import BreakingNews from './collections/breakingNews';
 import { CollectionConfig } from 'payload/types';
 import ContentNewsletter from './collections/contentNewsletter';
 import subscribersNewsletter from './collections/subscribersNewsletter';
+import Newsletters from './collections/Newsletters';
 
-// Configuring the PointsDInteret collection to manage location
+// Configuring the Points of Interest collection to manage location
 const PointsDInteret: CollectionConfig = {
   slug: 'points-d-interet',
   labels: {
@@ -53,13 +54,17 @@ const PointsDInteret: CollectionConfig = {
 const Media: CollectionConfig = {
   slug: 'media',
   access: {
-    read: () => true, // Autorise l'accès public en lecture
+    read: () => true, //Allows public read access
   },
   upload: {
+    // Defines the URL path where media files will be publicly accessible
     staticURL: '/media',
-    staticDir: path.resolve(__dirname, '../media'), // Adjust path for absolute reference
+    // Specifies the directory where uploaded media files are stored on the server
+    staticDir: path.resolve(__dirname, '../media'), 
+     // Configures multiple image sizes for responsive design
     imageSizes: [
       {
+        // Size name for admin interface or custom usage
         name: 'thumbnail',
         width: 400,
         height: 300,
@@ -78,7 +83,9 @@ const Media: CollectionConfig = {
         position: 'center',
       },
     ],
+    // Sets the default image size shown in the admin interface
     adminThumbnail: 'thumbnail',
+    // Limits the allowed file types for upload to images only
     mimeTypes: ['image/*'],
   },
   fields: [
@@ -93,18 +100,26 @@ const Media: CollectionConfig = {
 // Main Payload CMS configuration
 export default buildConfig({
   admin: {
+    // Specifies that the Users collection will be used for user authentication
     user: Users.slug,
+    // Integrates Webpack for bundling static files in the admin interface
     bundler: webpackBundler(),
   },
+  // Configures the rich text editor using Slate
   editor: slateEditor({}),
-  collections: [Users, Concerts, PointsDInteret, BreakingNews, ContentNewsletter, subscribersNewsletter, Media],
+  // Declares all collections used in the project for Payload CMS
+  collections: [Users, Concerts, PointsDInteret, BreakingNews, ContentNewsletter, subscribersNewsletter, Media, Newsletters],
+  // TypeScript configuration to generate type definitions for Payload's collections and fields
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
+  // GraphQL configuration to generate the schema for Payload's collections and fields
   graphQL: {
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
   },
+  // Enables the Payload Cloud plugin for cloud-specific functionality
   plugins: [payloadCloud()],
+  // Database configuration using MongoDB adapter
   db: mongooseAdapter({
     url: process.env.MONGODB_URI || '',
   }),
