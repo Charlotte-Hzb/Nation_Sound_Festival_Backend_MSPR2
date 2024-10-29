@@ -92,7 +92,7 @@ The backend architecture is as follows :
 ```
 Backend/
   ├── src/
-  │   ├── collections/           # Payload CMS Collections (Concerts, BreakingNews, etc.)
+  │   ├── collections/            # Payload CMS Collections (Concerts, BreakingNews, etc.)
   │   ├── views/
   │   │   └── artist_template.ejs # EJS template for artist pages
   │   ├── payload.config.ts       # Payload CMS configuration
