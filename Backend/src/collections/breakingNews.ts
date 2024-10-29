@@ -3,10 +3,9 @@
 import { CollectionConfig } from 'payload/types';
 
 const BreakingNews: CollectionConfig = {
-  // The collection name in the CMS
   slug: 'breaking-news', 
   labels: {
-    // Singular and plural labels for this collection in the admin interface
+    // The collection name in the CMS
     singular: 'Breaking News',
     plural: 'Breaking News',
   },
@@ -16,7 +15,7 @@ const BreakingNews: CollectionConfig = {
     useAsTitle: 'title',
   },
   access: {
-    read: () => true, // Permet l'accès public en lecture
+    read: () => true, // Allows everyone to read the concerts
   },
   fields: [
   // The fields that define the content structure of the collection
