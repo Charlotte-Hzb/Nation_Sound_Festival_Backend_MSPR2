@@ -220,7 +220,7 @@ async function sendNewsletter(newsletter: Newsletter, recipientEmails: string[])
   let emailContent = `
     <div style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;">
       <div style="background-color: #000000; padding: 20px; text-align: center;">
-        <a href="https://nation-sound-festival-project-fr2p-jqnwvymdb.vercel.app" style="display: inline-block;">
+        <a href="https://nation-sound-festival-project-fr2p.vercel.app" style="display: inline-block;">
           <img src="${logoURL}" alt="Festival NationSound Logo" style="width: 100%; max-width: 200px; height: auto; margin-bottom: 10px;">
         </a>
       </div>
