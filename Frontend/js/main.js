@@ -372,7 +372,7 @@ new Vue({
         // Fetch locations and points of interest
         fetchLocations() {
             // Sending a GET request to the Payload API to retrieve points of interest, limited to 30 items.
-            axios.get('https://nation-sound-festival-project.onrender.com/api/points-d-interet?limit=30')
+            axios.get('https://nation-sound-festival-project.onrender.com/api/points-of-interest?limit=30')
                 .then(response => {
                     // Extracting the data (points of interest) from the API response.
                     const locations = response.data.docs;
