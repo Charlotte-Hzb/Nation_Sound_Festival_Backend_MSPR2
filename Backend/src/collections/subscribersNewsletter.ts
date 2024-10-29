@@ -3,8 +3,8 @@ import { CollectionConfig } from 'payload/types';
 const subscribersNewsletter: CollectionConfig = {
   slug: 'subscribers-newsletters',
   labels: {
-    singular: 'Abonné Newsletter',
-    plural: 'Abonnés Newsletter',
+    singular: 'Subscriber Newsletter',
+    plural: 'Subscribers Newsletter',
   },
   access: {
     read: () => true, // Permet la lecture publique (à ajuster si besoin)
