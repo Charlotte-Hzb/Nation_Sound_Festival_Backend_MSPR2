@@ -14,14 +14,15 @@ import BreakingNews from './collections/breakingNews';
 import { CollectionConfig } from 'payload/types';
 import ContentNewsletter from './collections/contentNewsletter';
 import subscribersNewsletter from './collections/subscribersNewsletter';
+import pointOfInterest from './collections/pointOfInterest';
 
 
 // Configuring the Points of Interest collection to manage location
-const PointsDInteret: CollectionConfig = {
-  slug: 'points-d-interet',
+const PointOfInterest: CollectionConfig = {
+  slug: 'points-of-interest',
   labels: {
-    singular: 'Point d\'Intérêt',
-    plural: 'Points d\'Intérêt',
+    singular: 'Point of interest',
+    plural: 'Points of interest',
   },
   access: {
     read: () => true,
@@ -108,7 +109,7 @@ export default buildConfig({
   // Configures the rich text editor using Slate
   editor: slateEditor({}),
   // Declares all collections used in the project for Payload CMS
-  collections: [Users, Concerts, PointsDInteret, BreakingNews, ContentNewsletter, subscribersNewsletter, Media],
+  collections: [Users, Concerts, pointOfInterest, BreakingNews, ContentNewsletter, subscribersNewsletter, Media],
   // TypeScript configuration to generate type definitions for Payload's collections and fields
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
