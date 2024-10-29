@@ -299,7 +299,7 @@ new Vue({
                         day: 'numeric'
                     })))];
 
-                    this.uniqueTypes = [...new Set(this.artists.map(artist => artist.type))];
+                    this.uniqueTypes = [...new Set(this.artists.map(artist => artist.type.charAt(0).toUpperCase() + artist.type.slice(1)))];
                     this.uniqueScenes = [...new Set(this.artists.map(artist => artist.scene))];
 
                     // Update the filtered artists with the complete data
