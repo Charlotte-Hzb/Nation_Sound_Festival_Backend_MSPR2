@@ -14,7 +14,7 @@ import BreakingNews from './collections/breakingNews';
 import { CollectionConfig } from 'payload/types';
 import ContentNewsletter from './collections/contentNewsletter';
 import subscribersNewsletter from './collections/subscribersNewsletter';
-import Newsletters from './collections/Newsletters';
+
 
 // Configuring the Points of Interest collection to manage location
 const PointsDInteret: CollectionConfig = {
@@ -108,7 +108,7 @@ export default buildConfig({
   // Configures the rich text editor using Slate
   editor: slateEditor({}),
   // Declares all collections used in the project for Payload CMS
-  collections: [Users, Concerts, PointsDInteret, BreakingNews, ContentNewsletter, subscribersNewsletter, Media, Newsletters],
+  collections: [Users, Concerts, PointsDInteret, BreakingNews, ContentNewsletter, subscribersNewsletter, Media],
   // TypeScript configuration to generate type definitions for Payload's collections and fields
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
