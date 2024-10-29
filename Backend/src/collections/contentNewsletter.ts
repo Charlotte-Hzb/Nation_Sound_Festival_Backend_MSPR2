@@ -3,11 +3,15 @@
 import { CollectionConfig } from 'payload/types';
 
 const contentNewsletter: CollectionConfig = {
-  // The collection name in the CMS
   slug: 'content-newsletter',
   admin: {
     useAsTitle: 'title',
   },
+  // The collection name in the CMS
+  labels: {
+    singular: 'Newsletter', 
+    plural: 'Newsletters',    
+    },
   fields: [
     // The fields that define the content structure of the collection
     {
