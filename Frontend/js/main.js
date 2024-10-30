@@ -201,6 +201,7 @@ async function fetchBreakingNews(page = 1) {
         const data = await response.json();
         displayBreakingNews(data.docs || []);
         setupPagination(data.totalPages || 1, page);
+        return data.totalPages;
     } catch (error) {
         console.error('Erreur lors de la récupération des actualités:', error);
     }
@@ -259,12 +260,8 @@ function startAutoSlide(totalPages) {
 
 // Call to fetch breaking news when the page loads
 document.addEventListener('DOMContentLoaded', async () => {
-    // This function fetches the latest breaking news data from the server. The returned data is then stored in the "data" variable.
-    const data = await fetchBreakingNews();
-    // Retrieve the total number of pages
-    // If totalPages is not available or is undefined, it defaults to 1.
-    // This ensures that there is at least one page for the news.
-    const totalPages = data.totalPages || 1;
+    // Fetches the total number of pages by calling fetchBreakingNews for the first page
+    const totalPages = await fetchBreakingNews() || 1;
     // Start the automatic slide scrolling every 5 slides
     startAutoSlide(totalPages);
 });
