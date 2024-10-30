@@ -629,7 +629,7 @@ ul, ol {
     border-radius: 0 3px 3px 0;
 }
 
-@media (max-width: 768px) { /* Small breakpoint for tablets */
+@media (max-width: 1024px) { 
     .card {
       width: 100%;
     }
@@ -638,6 +638,10 @@ ul, ol {
       max-width: 90%;
       width: 100%;
       margin: 0 auto;
+    }
+
+    .text-uppercase {
+        font-size: 12px;
     }
 }
   
