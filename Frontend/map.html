@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Le festival Nation Sound de Paris c&#039;est une programmation audacieuse et créative qui réunit chaque été artistes et festivaliers depuis leur création en 1985" />
-    <title>Plan du festival - Nation Sound Festival</title>
+    <title>Billeterie - Nation Sound Festival</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.6.0/Control.FullScreen.css" />
   </head>
   <body> 
     <div id="app">
@@ -58,28 +56,57 @@
       </header>
       <!-- Main content -->
       <main>
-        <!-- Map -->
-        <h1 class="mapFestival text-center pt-4">plan du festival</h1>  
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="mt-4">
-              <div class="d-flex flex-column align-items-start">
-                <p class="text-uppercase text-center title-mapPage mt-4">Explorez le festival en toute simplicité</p>
-                <p class="text-mapPage"> Découvrez toutes les informations essentielles pour profiter pleinement du festival. Naviguez facilement entre les différentes zones et trouvez rapidement ce que vous cherchez. Grâce à notre système de géolocalisation, chaque lieu référencé est précisément marqué sur la carte, vous permettant de repérer en un clin d'œil les points d'intérêt, les lieux de restauration, les sanitaires, et bien plus encore.</p>
-                <p class="text-mapPage">Simplifiez votre visite et assurez-vous de ne rien manquer grâce à notre carte interactive, conçue pour rendre votre expérience du festival aussi agréable que possible.</p>
+        <!-- Ticketing -->
+        <div class="cover-container">
+          <img src="./assets/images/couv-tickets.png" alt="Banniere tickets" class="cover-image">
+          <div class="cover-title">Billetterie</div>
+        </div>
+        <div class="bg-dark py-4">
+          <div class="container">
+            <div class="row justify-content-center mt-4">
+              <div class="col-12 col-md-4 mb-3">
+                <div class="card">
+                  <img src="./assets/images/Pass-vend.png" class="img-pass" alt="pass vendredi">
+                </div>
               </div>
-            </div> 
-            <div class="mt-4 mb-3">
-              <div class="filters text-center m-4 flex-wrap d-flex justify-content-center">
-                <button @click="filterMarkers('all')" class="btn btn-custom-filter mx-2 btn-block">Tous</button>
-                <button @click="filterMarkers('Accueil')" class="btn btn-custom-filter mx-2 btn-block">Accueil</button>
-                <button @click="filterMarkers('Scène')" class="btn btn-custom-filter mx-2 btn-block">Scènes</button>
-                <button @click="filterMarkers('WC')" class="btn btn-custom-filter mx-2 btn-block">W.C</button>
-                <button @click="filterMarkers('Buvette')" class="btn btn-custom-filter mx-2 btn-block">Buvettes</button>
-                <button @click="filterMarkers('Shop')" class="btn btn-custom-filter mx-2 btn-block">Shops</button>
-                <button @click="locateUser" class="btn btn-custom-locateUSer mx-2 btn-block">Me Localiser</button>
+              <div class="col-12 col-md-4 mb-3">
+                <div class="card">
+                  <img src="./assets/images/Pass-sam.png" class="img-pass" alt="pass samedi">
+                </div>
               </div>
-              <div id="map" style="height: 500px;" class="mb-5"></div>
+              <div class="col-12 col-md-4 mb-3">
+                <div class="card">
+                  <img src="./assets/images/Pass-dim.png" class="img-pass" alt="pass dimanche">
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-12 col-md-4 mb-3">
+                <div class="card">
+                  <img src="./assets/images/Pass-2-3jrs.png" class="img-pass" alt="pass 2-3 jours">
+                </div>
+              </div>
+              <div class="col-12 col-md-4 mb-3">
+                <div class="card">
+                  <img src="./assets/images/Pass-nuit.png" class="img-pass" alt="pass nuit">
+                </div>
+              </div>
+              <div class="col-12 col-md-4 mb-3">
+                <div class="card">
+                  <img src="./assets/images/Pass-bb.png" class="img-pass" alt="pass bourse billets">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-12 col-md-4 mb-3"></div>
+              <div class="col-12 col-md-4 mb-3">
+                <div class="d-flex justify-content-center align-items-center">
+                  <button type="button" class="btn btn-orange btn-size text-uppercase mt-5">réserver mon billet</button>
+                </div>
+              </div>
+              <div class="col-12 col-md-4 mb-3"></div>
             </div>
           </div>
         </div>
@@ -188,14 +215,10 @@
         </div>  
       </footer>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.6.0/Control.FullScreen.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
