@@ -1,715 +1,495 @@
-
-@import 'font.css';
-
-:root {
-    --white: #FFFFFF;
-    --red: #FB1F1F;
-    --black: #000000;
-    --orange: #F87E22;
-}
-
-body {
-    font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
-}
-
-.accessibility {
-    position: absolute;
-    left: -15000px;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul, ol {
-    list-style-type: none;
-}
-
-/* Header - Navbar */
-
-.logo {
-    width: 150px;
-}
-
-.logo-navbar {
-    display: flex;
-    flex-direction: column;
-}
-
-.date {
-    font-size: 11px;
-    font-family:'Nunito Sans', Arial, Helvetica, sans-serif;
-    text-transform: uppercase;
-    font-weight: 800;
-    color: var(--orange);
-    margin-left: 15px;
-}
-
-.billetterie-caption .billetterie-background {
-    background-color: red;
-    color: white;
-    padding: 5px 10px;
-    display: inline-block;
-    text-transform: uppercase;
-    font-weight: 800;
-    font-size: 12px;
-    border-radius: 3px;
-  }
-
-.billetterie-caption:hover {
-    transform: scale(1.1);
-}
-  
-
-.navbar-custom {
-    background-color: var(--black);
-}
-
-.nav-link:hover {
-    color: var(--white);
-}
-
-.navbar-toggler.custom-toggler {
-    border-color: transparent;
-    margin-right: 30px !important;
-}
-
-.nav-text {
-    font-size: 12px ;
-    font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    padding-top: 13px;
-}
-
-.navbar-nav {
-    margin-left: auto;
-}
-
-.toggle-nav {
-    display: none;
-}
-
-/* Index page */
-
-.breaking-news-container {
-    background-color: #FB1F1F;
-    color: #ffffff;
-    padding: 20px;
-}
-
-.breaking-news-banner {
-    display: flex;
-    flex-direction: column;
-}
-
-.news-item {
-    margin-bottom: 15px;
-}
-
-.news-item h3 {
-    font-size: 1.5em;
-    text-align: center;
-    margin-bottom: 5px;
-    color: #ffffff; 
-}
-
-.news-item p {
-    text-align: center;
-    margin-bottom: 5px;
-    color: #ffffff; 
-}
-
-.news-item span {
-    font-size: 0.85em;
-    color: #f0f0f0;
-}
-
-.pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.page-dot {
-    cursor: pointer;
-    height: 10px;
-    width: 10px;
-    margin: 0 5px;
-    background-color: #ffffff; /* Couleur des points inactifs */
-    border-radius: 50%; /* Crée des puces rondes */
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-.page-dot.active {
-    background-color: #FFFFFF; /* Couleur des points actifs */
-}
-
-.page-dot:hover {
-    background-color: #b0b0b0; /* Couleur au survol */
-}
-
-.banner-container {
-    position: relative;
-    max-width: 100%;
-    margin: auto;
-    overflow: hidden;
-}
-  
-.banner-wrapper {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-  
-.banner-slide {
-    min-width: 100%;
-    box-sizing: border-box;
-}
-  
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    background-color: rgba(0, 0, 0, 0.5); /* Boutons translucides */
-}
-  
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-  
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-}
-  
-.pagination-dots {
-    text-align: center;
-    padding: 10px 0;
-}
-  
-.pagination-dots .active, .pagination-dots span:hover {
-    background-color: #ffffff; /* Point de pagination actif en blanc */
-}
-
-.program, .map, .partnership, .mapFestival {
-    font-family: 'Anton', Arial, Helvetica, sans-serif;
-    font-size: 40px;
-    text-transform: uppercase;
-    font-weight: 800;
-    text-align: center;
-}
-
-.map-h3 {
-    font-family: 'Anton', Arial, Helvetica, sans-serif;
-    font-size: 40px;
-    text-transform: uppercase;
-    font-weight: 800;
-    text-align: center;
-    color: var(--orange);
-}
-
-.group-title {
-    font-family: 'Anton', Arial, Helvetica, sans-serif;
-    font-size: 30px;
-    text-transform: uppercase;
-    font-weight: 800;
-    text-align: center;
-    color: var(--orange);
-}
-
-.card {
-    background-color: transparent;
-    border: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.img-card {
-    object-fit: cover;
-    width: 100%;
-    height: auto;
-}
-
-.img-card-hp {
-    object-fit: cover;
-    width: 100%;
-    height: 200px;
-}
-
-.btn-outline-orange {
-    border: 1px solid var(--orange);
-    color: var(--orange);
-    background-color: transparent;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    width: 320px;
-}
-
-.btn-outline-orange:hover {
-    background-color: var(--orange);
-    color: var(--white);
-}
-
-.btn-orange {
-    background-color: var(--orange);
-    color: var(--white);
-    border: 1px solid var(--orange);
-    font-weight: 600;
-    transition: all 0.3s ease;
-    width: 100%;
-}
-
-.btn-orange:hover {
-    background-color: transparent;
-    color: var(--orange);
-    border: 1px solid var(--orange);
-}
-
-.btn-size-hp {
-    width: 360px;
-}
-
-.btn-custom-map {
-    background-color: var(--white);
-    color: var(--black);
-    font-size: 14px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.btn-custom-map:hover {
-    background-color: transparent;
-    color: var(--white);
-    font-size: 14px;
-    border: 1px solid var(--white);
-}
-
-.bg-dark {
-    background-color: var(--black) !important;
-}
-
-.map {
-    max-width: 500px;
-}
-
-.title-map {
-    font-family: 'Anton', Arial, Helvetica, sans-serif;
-    font-size: 24px;
-    font-weight: 500;
-    color: var(--white);
-    margin: 20px;
-}
-
-.text-map {
-    font-size: 16px;
-    color: var(--white); 
-    margin: 20px;
-}
-
-.slick-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.slick-slide img {
-    max-height: 200px;
-    object-fit: contain;
-}
-
-.carousel .slick-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-.carousel img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-
-/* Billeterie */
-
-.cover-container {
-    position: relative;
-    text-align: center;
-    color: var(--orange);
-}
-
-.cover-image {
-    width: 100%;
-    height: auto;
-}
-
-.cover-title {
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 24px;
-    padding: 20px;
-    border-radius: 10px;
-    font-family: 'Anton', Arial, Helvetica, sans-serif;
-    font-size: 40px;
-    text-transform: uppercase;
-    font-weight: 800;
-    text-align: center;
-}
-
-/* Program */
-
-.btn-custom-filter {
-    margin: 5px;
-    padding: 10px;
-    background-color: var(--orange);
-    color: var(--white);
-    border: none;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: 600;
-    border-radius: 5px;
-}
-
-.btn-custom-filter:hover {
-    border: 1px solid var(--orange);
-    color: var(--orange);
-    background-color: transparent;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    margin: 0 15px;
-}
-
-.btn-custom-seondary-filter {
-    border: 1px solid var(--black);
-    color: var(--black);
-    background-color: transparent;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    margin: 0 15px;
-}
-
-.btn-custom-seondary-filter:hover {
-    margin: 5px;
-    padding: 10px;
-    background-color: var(--black);
-    color: var(--white);
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    border-radius: 5px;
-}
-
-.artists {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.title-card-artist {
-    font-family: 'Anton', Arial, Helvetica, sans-serif;
-    font-size: 22px;
-    text-transform: uppercase;
-    font-weight: 600;
-    text-align: center;
-}
-
-/* Product artist */
-
-.imgArtistPage {
-  max-width: 100%;
-}
-
-.h1-artist {
-    font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
-    font-size: 35px;
-    font-weight: 900;
-}
-
-.pArtist, .artistDateHour {
-    font-size: 18px;
-}
-
-.artistDateHour {
-    font-weight: 900;
-}
-.artistScene {
-    font-size: 18px;
-    font-weight: 900;
-}
-
-.artistType {
-    font-size: 18px;
-    text-transform: uppercase;
-    font-weight: 900;
-    color: var(--red);
-}
-
-/* Map */
-
-.title-mapPage {
-    font-family: 'Anton', Arial, Helvetica, sans-serif;
-    font-size: 24px;
-    font-weight: 500;
-    color: var(--orange);
-}
-
-.text-mapPage {
-    font-size: 16px;
-    color: var(--black);
-}
-
-.btn-custom-locateUSer {
-    margin: 5px;
-    padding: 10px;
-    background-color: var(--black);
-    color: var(--white);
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    border-radius: 5px;   
-}
-
-.btn-custom-locateUSer:hover {
-    border: 1px solid var(--black);
-    color: var(--black);
-    background-color: transparent;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    margin: 0 15px;
-}
-
-/* Mentions légales & CGU et cookies */
-
-.title-cgu, .title-data-cookie, .title-faq, .partnership-h1 {
-    font-family: 'Anton', Arial, Helvetica, sans-serif;
-    font-size: 40px;
-    text-transform: uppercase;
-    font-weight: 800;
-}
-
-.legal-mention-h2, .data-cookie-h2 {
-    font-family: 'Anton', Arial, Helvetica, sans-serif;
-    font-size: 25px;
-    text-transform: uppercase;
-    font-weight: 800;
-    text-align: left;
-    color: var(--orange);
-    margin-top: 50px;
-}
-
-.partnership-h2 {
-    font-family: 'Anton', Arial, Helvetica, sans-serif;
-    font-size: 25px;
-    text-transform: uppercase;
-    font-weight: 800;
-    color: var(--orange);
-    margin-top: 50px;
-    margin-left: 40px;
-}
-
-.legal-mention-h3, .data-cookie-h3 {
-    font-size: 20px;
-}
-
-/* FAQ */
-
-.accordion-button {
-    font-size: 14;
-    font-weight: 800;
-}
-
-.accordion-button:not(.collapsed) {
-    background-color: var(--orange) !important;
-    color: white;
-}
-
-/* Partnership */
-
-.img-partnership {
-    max-width: 100%;
-    height: auto;
-}
-
-.become-partnership {
-    font-family: 'Anton', Arial, Helvetica, sans-serif;
-    font-size: 25px;
-    font-weight: 800;
-    text-transform: uppercase;
-}
-
-.partnership-container {
-    margin-left: 40px;
-}
-
-.contact, .contact-email {
-    font-size: 18px;
-    line-height : 1;
-
-}
-
-.contact-email {
-    text-decoration-line: underline;
-}
-
-.contact-email:hover {
-    color: var(--red);
-    font-weight: 600;
-}
-
-/* Footer */
-
-.social-link {
-    display: inline-block;
-    margin: 0 10px; 
-    transition: color 0.3s ease;
-    color: var(--white)
-}
-
-.social-link:hover {
-    color: var(--red); 
-}
-
-.social-medias {
-    width: 40px; 
-    height: 40px;
-    transition: fill 0.3s ease; 
-}
-
-.social-link:hover .social-medias {
-    fill: currentColor; 
-}
-
-.text-footer-copyright, .text-footer {
-    font-size: 12px;
-    font-weight: 800;
-    color: var(--white);
-    text-decoration: none;
-}
-
-.text-footer:hover {
-    color: #FB1F1F;
-}
-
-.news {
-    font-size: 16px;
-    font-weight: 800;
-    color: var(--white);
-}
-
-.field {
-    width: 310px;
-    padding: 10px;
-    font-size: 14px; 
-    border: none;
-    border-radius: 3px 0 0 3px ;
-    box-sizing: border-box;
-}
-
-.field::placeholder {
-    color: var(--black);
-    font-weight: 700;
-    opacity: 1;
-}
-
-.img-ok {
-    width: 43px;
-    border-radius: 0 3px 3px 0;
-}
-
-@media (max-width: 1024px) { 
-    .card {
-      width: 100%;
+// ==========================
+// Carousel Initialization
+// ==========================
+
+// Initialize carousel logo with Slick
+$(document).ready(function () {
+    $('.carousel').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: true,
+        dots: false,
+        pauseOnHover: true,
+        responsive: [
+            {
+                breakpoint: 1200, // breakpoint for large screens (desktop)
+                settings: {
+                    slidesToShow: 6,
+                }
+            },
+            {
+                breakpoint: 992, // breakpoint for tablets
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
+            {
+                breakpoint: 768, // breakpoint for tablets
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 480, // breakpoint for mobile
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    });
+});
+
+// ==========================
+// Featured Artists Display 
+// ==========================
+
+// Shuffle and display random artists
+const artists = [
+    {
+        name: 'Neon Pulse',
+        description: 'Ce duo électrisant fusionne des beats envoûtants et des mélodies synthétiques pour offrir un cocktail musical puissant et réconfortant où la pop et le brass band se rencontrent ! [...]',
+        image: 'https://nation-sound-festival-project.onrender.com/media/mike-cox-MEAXhjcnHEE-unsplash-side1.jpg',
+        url: 'https://nation-sound-festival-project.onrender.com/concerts/artist_neon_pulse.html'
+    },
+    {
+        name: 'Electric Echoes',
+        description: 'Mud Deep, co-fondatrice de D.KO Records et génie de la musique électronique, s\'apprête à enflammer la scène. Préparez-vous pour un set aux petits oignons avec cette maestro créative ! [...]',
+        image: 'https://nation-sound-festival-project.onrender.com/media/vidar-nordli-mathisen-CTlRgg7Gfmw-unsplash-slide2.jpg',
+        url: 'https://nation-sound-festival-project.onrender.com/concerts/artist_electric_echoes.html'
+    },
+    {
+        name: 'Luminous Beats',
+        description: 'Orion est connu pour ses collaborations avec les plus grands noms de l\'électro et ses remix audacieux. Il ne cesse de repousser les limites de la créativité musicale avec ses tubes flamboyants. [...]',
+        image: 'https://nation-sound-festival-project.onrender.com/media/vidar-nordli-mathisen-IT5-0oM0YH0-unsplash-slide3.jpg',
+        url: 'https://nation-sound-festival-project.onrender.com/concerts/artist_luminous_beats.html'
+    },
+    {
+        name: 'Galactic Groove',
+        description: 'Galactic Groove est un groupe révolutionnaire qui marie des rythmes électroniques hypnotiques à des mélodies entraînantes. Leur musique est un voyage sonore unique qui transporte l\'auditeur [...]',
+        image: 'https://nation-sound-festival-project.onrender.com/media/vidar-nordli-mathisen-szmET3Kja8s-unsplash-slide5.jpg',
+        url: 'https://nation-sound-festival-project.onrender.com/concerts/artist_galactic_groove.html'
+    },
+    {
+        name: 'Synthwave Surge',
+        description: 'Synthwave Surge, avec sa voix envoûtante et ses mélodies soul fusionnées à des rythmes électroniques, offre une performance riche en émotions. Son style unique capte l\'attention et fait vibrer [...]',
+        image: 'https://nation-sound-festival-project.onrender.com/media/2150639041.jpg',
+        url: 'https://nation-sound-festival-project.onrender.com/concerts/artist_synthwave_surge.html'
+    },
+    {
+        name: 'PULSE ECHO',
+        description: 'Pulse Echo est connue pour ses performances dynamiques et ses rythmes contagieux qui font danser les foules. Sa musique est une fusion innovante de genres qui crée une atmosphère festive [...]',
+        image: 'https://nation-sound-festival-project.onrender.com/media/2148325414.jpg',
+        url: 'https://nation-sound-festival-project.onrender.com/concerts/artist_pulse_echo.html'
+    },
+];
+
+// Artist shuffle function to randomize the order of artists in the array
+function shuffle(array) {
+    // Loop through the array backwards
+    for (let i = array.length - 1; i > 0; i--) {
+        // Select a random index from 0 to i
+        const j = Math.floor(Math.random() * (i + 1));
+        // Swap elements at indices i and j
+        [array[i], array[j]] = [array[j], array[i]];
     }
-  
-    .card .btn-outline-orange {
-      max-width: 100%;
-      width: 100%;
-      margin: 0 auto;
+    // Return the shuffled array
+    return array;
+}
+
+// Select 3 random artists from the shuffled array
+const randomArtists = shuffle(artists).slice(0, 3);
+
+// Display function for random artists
+function displayRandomArtists() {
+    // Locate the container element for featured artists
+    const container = document.getElementById('featured-artists');
+    if (!container) {
+        // Log error if container element is not found
+        console.error('Element #featured-artists not found');
+        return;
+    }
+    // Iterate over each random artist and generate HTML for their card
+    randomArtists.forEach(artist => {
+        // Define the HTML structure for the artist's card, using template literals
+        const cardHtml = `
+            <div class="col-12 col-md-4 mb-3">
+              <div class="card">
+                <img src="${artist.image}" class="card-img-top img-card-hp" alt="${artist.name}">
+                <div>
+                  <p class="group-title pt-3">${artist.name}</p>
+                  <p class="p-3 text-justify">${artist.description}</p>
+                  <div class="d-flex justify-content-center align-items-center mb-4">
+                    <a href="${artist.url}"><button type="button" class="btn btn-outline-orange text-uppercase">En savoir +</button></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        `;
+        // Append the artist's card HTML to the container
+        container.innerHTML += cardHtml;
+    });
+}
+
+// Trigger display after the page has fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+    displayRandomArtists();
+});
+
+// ==========================
+// Newsletter Subscription 
+// ==========================
+
+// Submits email for newsletter subscription
+function submitNewsletter() {
+    // Selects the input field where the user enters their email address
+    const emailField = document.getElementById('newsletterEmail');
+    // Retrieves the value entered in the email input field
+    const email = emailField.value;
+
+    // Checks if the email field is empty
+    if (!email) {
+        alert('Veuillez entrer un email valide.');
+        // Stops the function from continuing if the email is not provided
+        return;
     }
 
-    .text-uppercase {
-        font-size: 0.9rem;
+    // Send POST request to the API for newsletter subscription
+    // This line sends a POST request to the provided URL with the user's email as the data payload. 
+    // This request is intended to add the user’s email to the newsletter subscription list.
+    axios.post('https://nation-sound-festival-project.onrender.com/api/newsletter', { email: email })
+        // If the request is successful, this .then block is executed and an alert is displayed to the user saying "Subscription successful".  
+        .then(response => {
+            console.log(response.data.message);
+            alert('Inscription réussie');
+            emailField.value = ''; // Clear the field
+        })
+        //  If there is an error during the request, this .catch block is executed.
+        .catch(error => {
+            console.error(error);
+            if (error.response && error.response.data && error.response.data.message) {
+                alert(error.response.data.message);
+            } else {
+                alert('Une erreur est survenue lors de l\'inscription.');
+            }
+        });
+}
+
+// This function validates whether the provided email address follows the correct format (e.g., contains "@" and a valid domain).
+// It uses a regular expression to test the email format.
+// This validation is useful to prevent incorrect email submissions before sending data to an API or storing it in a database.
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase()); // The email address to validate. Returns true if the email format is valid, otherwise false.
+}
+
+// ==========================
+// Breaking News Display 
+// ==========================
+
+/// Retrieve breaking news from the Payload API with pagination
+const baseURL = 'https://nation-sound-festival-project.onrender.com/api/breaking-news';
+let currentPage = 1;
+const newsPerPage = 1;
+
+// Fetch breaking news with pagination
+async function fetchBreakingNews(page = 1) {
+    try {
+        const response = await fetch(`${baseURL}?limit=${newsPerPage}&page=${page}`);
+        if (!response.ok) throw new Error("Failed to fetch");
+        const data = await response.json();
+        displayBreakingNews(data.docs || []);
+        setupPagination(data.totalPages || 1, page);
+        return data.totalPages;
+    } catch (error) {
+        console.error('Erreur lors de la récupération des actualités:', error);
     }
 }
-  
-@media (max-width: 992px) { /* Large breakpoint for tablets and below */
 
-.navbar-nav {
-    margin-left: 16px;
-    text-align: left;
-    flex: 1;
-}
+// Display breaking news
+function displayBreakingNews(newsItems) {
+    // Selects the HTML element with the ID breaking-news-banner, which is where the breaking news items will be displayed.
+    // The selected element is stored in the "banner" variable.
+    const banner = document.getElementById('breaking-news-banner');
+    banner.innerHTML = ''; // Clear old news
 
-.navbar-nav .nav-item {
-    float: none;
-    display: inline-block;
-}
-
-.navbar-nav .nav-link {
-    font-size: 18px;
-}
-
-.nav-text {
-    line-height: 1;
-}
-
-.navbar-toggler {
-    display: block;
-    border: none;
-    background: transparent;
-    position: relative;
-    width: 30px;
-    height: 30px;
-    padding: 0;
+    // ForEach loop that iterates over each news item in the newsItems array.
+    newsItems.forEach(news => {
+        //The ${} syntax is used to embed the variable directly into the HTML string.
+        const newsItem = `
+      <div class="news-item">
+        <h3>${news.title}</h3> 
+        <p>${news.content}</p>
+      </div>
+    `;
+        // This appends the newly created HTML string (representing the news item) to the innerHTML of the "banner" element, adding the news item to the displayed list.
+        banner.innerHTML += newsItem;
+    });
 }
 
-.navbar-toggler-icon {
-    width: 30px;
-    height: 30px;
-    background: no-repeat center center;
-    background-size: contain;
+// Setup pagination with round dots 
+function setupPagination(totalPages, currentPage) {
+    // Selection of the HTML element with the ID "pagination"
+    const paginationContainer = document.getElementById('pagination');
+    paginationContainer.innerHTML = ''; // Reset pagination 
+
+    // For loop that runs from 1 to totalPages.
+    // For each iteration, it creates a new pagination dot (representing a page).
+    for (let i = 1; i <= totalPages; i++) {
+        const pageDot = document.createElement('span'); // Create a span instead of a button. Provides flexibility for styling the pagination.
+        pageDot.classList.add('page-dot'); // adds the CSS class page-dot to the newly created <span> element.
+        if (i === currentPage) {
+            pageDot.classList.add('active'); // Activate the current page dot
+        }
+        // When a user clicks on a dot, it will call the fetchBreakingNews function, passing the page number (i), to load the corresponding page of news.
+        pageDot.addEventListener('click', () => fetchBreakingNews(i));
+        paginationContainer.appendChild(pageDot); // Add the dot to the pagination
+    }
 }
 
-.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
-    background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%28255, 255, 255, 1%29" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M7 7l16 16M7 23L23 7"/%3E%3C/svg%3E'); /* Croix */
+// Automatically slide to the next page every 5 seconds
+function startAutoSlide(totalPages) {
+    // This method starts a timer that executes the given function repeatedly at a specified interval.
+    setInterval(() => {
+        currentPage = currentPage < totalPages ? currentPage + 1 : 1; // If the last page is reached, go back to the first one
+        // This function fetches the breaking news for the specified page.
+        fetchBreakingNews(currentPage);
+    }, 5000); // 5000 milliseconds = 5 seconds
 }
 
-.navbar-toggler.collapsed .navbar-toggler-icon {
-    background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%28255, 255, 255, 1%29" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E'); /* Hamburger */
-}
+// Call to fetch breaking news when the page loads
+document.addEventListener('DOMContentLoaded', async () => {
+    // Fetches the total number of pages by calling fetchBreakingNews for the first page
+    const totalPages = await fetchBreakingNews() || 1;
+    // Start the automatic slide scrolling every 5 slides
+    startAutoSlide(totalPages);
+});
 
-.billetterie-caption {
-    display: none;
-}
+// ==========================
+// Vue.js Integration for Artists and Map
+// ==========================
 
-.cover-image {
-    display: none;
-}
+// Vue.js will handle reactivity for any changes in the data and update the DOM accordingly.
+new Vue({
+    el: '#app',
+    data: {
+        artists: [],
+        filteredArtists: [],
+        activeFilter: '',
+        uniqueDates: [],
+        uniqueTypes: [],
+        uniqueScenes: [],
+        map: null,
+        markers: [],
+        userMarker: null
+    },
+    methods: {
+        // The fetchArtists method retrieves data from an API using axios and stores the data in the "artists" array.
+        // This method also initializes filters and sorts the concerts by ascending date.
+        fetchArtists() {
+            axios.get('https://nation-sound-festival-project.onrender.com/api/concerts?limit=15')
+                .then(response => {
+                    console.log("Données reçues :", response.data.docs);
+                    this.artists = response.data.docs;
 
-.cover-title {
-    padding-top: 40px;
-    padding-bottom: 20px;
-}
+                    // Sort the concerts by ascending date
+                    this.artists.sort((a, b) => new Date(a.date) - new Date(b.date));
 
-.partnership-h2 {
-    text-align: center;
-    margin-left: 0;
-}
+                    // Extraction of unique dates from the list of concerts and storing in the uniqueDates array.
+                    // It uses the Set object to filter out duplicate dates.
+                    this.uniqueDates = [...new Set(this.artists.map(artist => new Date(artist.date).toLocaleDateString('fr-FR', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    })))];
 
-.partnership-container {
-    margin-left: 0;
-}
-}
+                    this.uniqueTypes = [...new Set(this.artists.map(artist => artist.type.charAt(0).toUpperCase() + artist.type.slice(1).toLowerCase()))];
+                    this.uniqueScenes = [...new Set(this.artists.map(artist => artist.scene))];
+
+                    // Update the filtered artists with the complete data
+                    this.filteredArtists = this.artists;
+
+                    // This loop formats the concert dates for display in a human-readable format.
+                    this.filteredArtists.forEach(artist => {
+                        const eventDate = new Date(artist.date);
+                        artist.formattedDate = eventDate.toLocaleDateString('fr-FR', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+                    });
+                })
+                .catch(error => {
+                    console.error('Erreur lors de la récupération des artistes:', error);
+                });
+        },
+
+        // Show filter options
+        // It takes a filter parameter, which is the filter type (e.g., date, genre, scene) that the user is trying to toggle.
+        showFilterOptions(filter) {
+            this.activeFilter = this.activeFilter === filter ? '' : filter;
+        },
+
+        // Filter artists by criteria
+        filterBy(filter, value = '') {
+            if (filter === 'all') {
+                // No filter, all artists displayed
+                this.filteredArtists = this.artists;
+            } else {
+                // Otherwise, the method applies the specified filter
+                this.filteredArtists = this.artists.filter(artist => artist[filter].toLowerCase() === value.toLowerCase());
+            }
+            // After applying the filter, it resets activeFilter to an empty string, which hides the filter options in the UI.
+            this.activeFilter = '';
+        },
+
+        // Retrieve image URL
+        getImageURL(image) {
+            console.log('Fetching image URL for:', image);
+            // This function checks if the image object exists, and if it has a sizes property with a card size defined.
+            // If so, it constructs the URL based on the card size (image.sizes.card.url).
+            if (image && image.sizes && image.sizes.card) {
+                return `https://nation-sound-festival-project.onrender.com${image.sizes.card.url}`;
+                // If no card size is found but the image object contains a general url, it falls back to this URL.
+            } else if (image && image.url) {
+                return `https://nation-sound-festival-project.onrender.com${image.url}`;
+            }
+            // If the image is undefined or neither sizes.card nor url is present, it returns a default image URL.
+            return 'https://nation-sound-festival-project.onrender.com/media/mike-cox-MEAXhjcnHEE-unsplash-side1-2.jpg';
+        },
+
+        // Retrieve concert URL with slug or name.
+        // This function ensures that each artist has a unique and consistent URL based on their name or slug, making it easy to link to specific concert pages.
+        getConcertUrl(artist) {
+            const artistSlug = artist.slug.replace('.html', '');
+            return `https://nation-sound-festival-project.onrender.com/concerts/${artist.slug}.html`;
+        },
+
+        // Fetch locations and points of interest
+        fetchLocations() {
+            // Sending a GET request to the Payload API to retrieve points of interest, limited to 30 items.
+            axios.get('https://nation-sound-festival-project.onrender.com/api/points-of-interest?limit=30')
+                .then(response => {
+                    // Extracting the data (points of interest) from the API response.
+                    const locations = response.data.docs;
+                    // Passing the retrieved points of interest to the addMarkers method to place them on the map.
+                    this.addMarkers(locations);
+                })
+                .catch(error => {
+                    console.error('Erreur lors de la récupération des points d\'intérêt:', error);
+                });
+        },
+
+        // Add map markers
+        addMarkers(locations) {
+            // Define icons for different types of points of interest (Accueil, WC, Scene, etc.) using Leaflet's icon method.
+            const icons = {
+                Accueil: L.icon({
+                    iconUrl: '/assets/images/807853_file.png',
+                    iconSize: [32, 32]
+                }),
+                WC: L.icon({
+                    iconUrl: '/assets/images/34710029_8209081.png',
+                    iconSize: [32, 32]
+                }),
+                Scène: L.icon({
+                    iconUrl: '/assets/images/35581312_012843528523.png',
+                    iconSize: [32, 32]
+                }),
+                Buvette: L.icon({
+                    iconUrl: '/assets/images/1010199_OIUFKV1.png',
+                    iconSize: [32, 32]
+                }),
+                Shop: L.icon({
+                    iconUrl: '/assets/images/10608601_43160.png',
+                    iconSize: [32, 32]
+                })
+            };
+
+            locations.forEach(point => {
+                // For each location (point), create a marker using Leaflet's L.marker method, passing the latitude and longitude of the point.
+                const marker = L.marker([point.lat, point.lng], { icon: icons[point.type] }).addTo(this.map)
+                    //Create a marker at the point's latitude and longitude, with the corresponding icon. Add the marker to the map.
+                    .bindPopup(`<b>${point.name}</b><br>${point.type}`);
+                // Bind a popup to the marker, showing the point's name and type when clicked.
+                this.markers.push(marker);
+                // Add the newly created marker to the markers array for potential future reference or manipulation.
+            });
+        },
+
+        // Filter map markers by type
+        filterMarkers(type) {
+            // Loop through each marker stored in the markers array.
+            this.markers.forEach(marker => {
+                const popupContent = marker.getPopup().getContent();
+                // Get the content of the popup associated with the current marker.
+                if (type === 'all' || popupContent.includes(type)) {
+                    marker.addTo(this.map);
+                    // If the filter is "all" or if the popup content includes the selected type, add the marker to the map.
+                } else {
+                    this.map.removeLayer(marker);
+                    // Otherwise, remove the marker from the map.
+                }
+            });
+        },
+
+        // Initialize map
+        initializeMap() {
+            // Initializes the Leaflet map with a view centered on the coordinates of the Parc Floral.
+            this.map = L.map('map').setView([48.838398, 2.443060], 17);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(this.map);
+            // Adds the map from OpenStreetMap and gives credit to OpenStreetMap contributors.
+
+            L.control.fullscreen().addTo(this.map);
+            // Adds a fullscreen control to the map, allowing users to view the map in fullscreen mode.
+
+            this.fetchLocations();
+            // Calls the function to fetch points of interest from the API and display them on the map.
+        },
+
+        // Locate user
+        locateUser() {
+            // Checks if the browser supports geolocation. If not, it displays an alert and exits the function.
+            if (!navigator.geolocation) {
+                alert('Géolocalisation non supportée par votre navigateur');
+                return;
+            }
+
+            navigator.geolocation.getCurrentPosition(
+                position => {
+                    // Retrieves the user's current position (latitude and longitude) and stores it in the variable `userLatLng`.
+                    const { latitude, longitude } = position.coords;
+                    const userLatLng = [latitude, longitude];
+
+                    // If a marker for the user's position already exists on the map, remove it.
+                    if (this.userMarker) {
+                        this.map.removeLayer(this.userMarker);
+                    }
+
+                    // Adds a marker at the user's current position with a popup displaying "You are here" and opens the popup.
+                    this.userMarker = L.marker(userLatLng).addTo(this.map)
+                        .bindPopup('<b>Vous êtes ici</b>')
+                        .openPopup();
+
+                    // Adjusts the map view to center on the user's current location with a zoom level of 17.
+                    this.map.setView(userLatLng, 17);
+                },
+                () => {
+                    // If there's an error in obtaining the user's position, an alert is displayed.
+                    alert('Impossible de récupérer votre position');
+                }
+            );
+        }
+    },
+    created() {
+        this.fetchArtists();
+    },
+    mounted() {
+        // Initialize the map when the page loads
+        this.initializeMap();
+    }
+});
