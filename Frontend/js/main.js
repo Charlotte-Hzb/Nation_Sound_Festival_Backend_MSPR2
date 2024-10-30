@@ -304,7 +304,7 @@ new Vue({
                         day: 'numeric'
                     })))];
 
-                    this.uniqueTypes = [...new Set(this.artists.map(artist => artist.type.charAt(0).toUpperCase() + artist.type.slice(1)))];
+                    this.uniqueTypes = [...new Set(this.artists.map(artist => artist.type.charAt(0).toUpperCase() + artist.type.slice(1).toLowerCase()))];
                     this.uniqueScenes = [...new Set(this.artists.map(artist => artist.scene))];
 
                     // Update the filtered artists with the complete data
@@ -338,7 +338,7 @@ new Vue({
                 this.filteredArtists = this.artists;
             } else {
                 // Otherwise, the method applies the specified filter
-                this.filteredArtists = this.artists.filter(artist => artist[filter] === value);
+                this.filteredArtists = this.artists.filter(artist => artist[filter].toLowerCase() === value.toLowerCase());
             }
             // After applying the filter, it resets activeFilter to an empty string, which hides the filter options in the UI.
             this.activeFilter = '';
