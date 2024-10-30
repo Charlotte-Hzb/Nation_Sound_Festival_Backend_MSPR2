@@ -629,7 +629,18 @@ ul, ol {
     border-radius: 0 3px 3px 0;
 }
 
-
+@media (max-width: 768px) { /* Small breakpoint for tablets */
+    .card {
+      width: 100%;
+    }
+  
+    .card .btn-outline-orange {
+      max-width: 90%;
+      width: 100%;
+      margin: 0 auto;
+    }
+}
+  
 @media (max-width: 992px) { /* Large breakpoint for tablets and below */
 
 .navbar-nav {
@@ -698,7 +709,3 @@ ul, ol {
     margin-left: 0;
 }
 }
-
-
-
-  
